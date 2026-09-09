@@ -1,7 +1,7 @@
 window.AL = window.AL || {};
 
 AL.spot = AL.config.spotFallback;
-AL.spotUpdated = AL.config.spotStamp;
+AL.spotUpdated = AL.config.spotStamp || AL.config.spotUpdated;
 AL.spotSource = "demo";
 
 AL.formatMoney = function (n, digits) {
@@ -21,6 +21,11 @@ AL.formatOz = function (n) {
   });
 };
 
+AL.cardMult = function () {
+  if (AL.config.cardMultiplier) return AL.config.cardMultiplier;
+  return 1 + (AL.config.cardSurcharge || 0);
+};
+
 AL.premiumFor = function (product, qty) {
   const tiers = (product.premiumTiers || []).slice().sort((a, b) => a.min - b.min);
   let prem = tiers.length ? tiers[0].premium : 0;
@@ -37,7 +42,7 @@ AL.price = function (product, qty, method) {
   const prem = AL.premiumFor(product, qty);
   const melt = spot * product.troyOz;
   const unitWire = melt + prem * product.troyOz;
-  const mult = method === "card" ? AL.config.cardMultiplier : 1;
+  const mult = method === "card" ? AL.cardMult() : 1;
   const unit = unitWire * mult;
   return {
     spot,
@@ -60,7 +65,7 @@ AL.price = function (product, qty, method) {
 
 AL.loadSpot = async function () {
   AL.spot = AL.config.spotFallback;
-  AL.spotUpdated = AL.config.spotStamp;
+  AL.spotUpdated = AL.config.spotStamp || AL.config.spotUpdated;
   AL.spotSource = "demo";
   window.dispatchEvent(new CustomEvent("al:spot", { detail: AL.spot }));
   return AL.spot;
