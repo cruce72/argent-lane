@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0C0E">
+  <title>Warehouse demo — Argent Lane</title>
+  <meta name="description" content="Demo warehouse inventory for Argent Lane. SKU, on-hand ounces, vault bin, reorder point.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/argent.css">
+</head>
+<body>
+  <div id="ticker"></div>
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="page wrap">
+      <p class="kicker">Demo warehouse</p>
+      <h1>Inventory board</h1>
+      <p class="lede">Labeled DEMO. These bins are not a live vault feed. SKU, ounces on hand, location, and reorder point only.</p>
+      <div class="table-wrap">
+        <table class="admin-table" id="admin-table">
+          <thead>
+            <tr><th>SKU</th><th>Lot</th><th>On-hand oz</th><th>Units</th><th>Vault / bin</th><th>Reorder at</th><th>Status</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
