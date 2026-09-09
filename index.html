@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0B0C0E">
+  <title>Argent Lane — physical silver</title>
+  <meta name="description" content="Demo storefront for Argent Lane, a Cruce Works company. Printed-spot pricing, own-inventory model.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/argent.css">
+</head>
+<body>
+  <div id="ticker"></div>
+  <header id="site-header"></header>
+  <main id="main">
+    <section class="hero wrap">
+      <p class="kicker">Cruce Works · Demo catalog</p>
+      <h1>Physical silver.<br>On hand.</h1>
+      <p class="lede">Own-inventory model. Wire price is spot plus a published premium per ounce. This catalog is a working demo — bins and stock counts are sample data.</p>
+      <div class="hero-spot">
+        <div>
+          <div class="spot-num" id="hero-spot"></div>
+          <p class="muted" id="hero-spot-note"></p>
+        </div>
+        <a class="btn btn-solid" href="/shop">Shop the board</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><b id="vault-oz">—</b><span>Demo ounces</span></div>
+        <div class="stat"><b id="vault-pos">—</b><span>Demo positions</span></div>
+        <div class="stat"><b>$199</b><span>Free insured ship</span></div>
+      </div>
+    </section>
+    <section class="section wrap">
+      <div class="section-head"><h2>Featured</h2><a href="/shop">Shop all</a></div>
+      <div class="product-grid" id="featured"></div>
+    </section>
+    <section class="section wrap">
+      <div class="section-head"><h2>Lowest premium</h2><a href="/shop">Bars & generic</a></div>
+      <div class="product-grid" id="low-prem"></div>
+    </section>
+    <section class="section wrap">
+      <div class="section-head"><h2>Clearance</h2></div>
+      <div class="product-grid" id="clearance"></div>
+    </section>
+    <section class="section wrap">
+      <div class="section-head"><h2>Art rounds</h2></div>
+      <div class="product-grid" id="art-rounds"></div>
+    </section>
+  </main>
+  <footer id="site-footer"></footer>
+  <script src="js/config.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/pricing.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
